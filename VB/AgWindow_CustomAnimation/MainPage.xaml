@@ -1,0 +1,30 @@
+﻿<UserControl xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AgWindow_CustomAnimation.MainPage"
+             mc:Ignorable="d" d:DesignWidth="640"
+             d:DesignHeight="480">
+  <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Button x:Name="showWin" Click="showPopup"
+                Grid.Column="1" Grid.Row="1"
+                Content="Show Popup" />
+        <dxc:DXWindow x:Name="popupWindow" AnimationType="Custom"
+                      Closed="popupWindow_Closed"
+                      Title="Popup Window">
+            <dxc:DXWindow.Icon>
+                <Image Source="../Images/Pie.png" />
+            </dxc:DXWindow.Icon>
+            <Button Content="Close" Click="closePopup" />
+        </dxc:DXWindow>
+    </Grid>
+</UserControl>
